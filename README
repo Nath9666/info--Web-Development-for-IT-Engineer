@@ -1,0 +1,7 @@
+# Description
+
+Vous trouverez ici les différents cours, tp avec les correction et devellopement des différents exercices
+
+# Lancement
+
+Pour lancer les codes, il existe 2 moyens soit vous lancer le code via une page web tel qu'il y a dans le dossier Lab1 soit vous intaller node et vous lancer via la commande "node index.js"
