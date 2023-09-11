@@ -1,13 +1,19 @@
 //Exercice 4
-fetch(
+let csvData;
+await fetch(
   "https://thomas-veillard.fr/wp-content/uploads/2021/07/apache-contributors-projects.csv"
 )
   .then((res) => res.text())
   .then((data) => {
-    parseCsvImperative(data);
-    parseCsvFunctional(data);
+    csvData = parseCsvFunctional(data);
+    cvsData1 = parseCsvImperative(data);
   })
-  .catch(console.log);
+  .catch((error) => {
+    console.error(
+      "Une erreur s'est produite lors de la récupération des données CSV :",
+      error
+    );
+  });
 
 /**
  * Process CSV data.
@@ -53,21 +59,6 @@ export function parseCsvFunctional(csvText) {
 }
 
 //Exercice 5
-
-let csvData;
-await fetch(
-  "https://thomas-veillard.fr/wp-content/uploads/2021/07/apache-contributors-projects.csv"
-)
-  .then((res) => res.text())
-  .then((data) => {
-    csvData = parseCsvFunctional(data);
-  })
-  .catch((error) => {
-    console.error(
-      "Une erreur s'est produite lors de la récupération des données CSV :",
-      error
-    );
-  });
 
 //Question 1
 /**
@@ -192,4 +183,4 @@ export function pullAndAnalyzeCsv() {
   };
 }
 
-console.log(pullAndAnalyzeCsv(csvData));
+console.log(pullAndAnalyzeCsv());
