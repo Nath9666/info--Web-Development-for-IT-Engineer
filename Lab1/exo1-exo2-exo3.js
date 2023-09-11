@@ -12,7 +12,7 @@ function sum(...num) {
   return num.reduce((acc, val) => acc + val);
 }
 
-console.log(sum()); // Error: At least one number is required
+//console.log(sum()); // Error: At least one number is required
 console.log(sum(1)); // 1
 console.log(sum(1, 2, 3)); // 6
 
