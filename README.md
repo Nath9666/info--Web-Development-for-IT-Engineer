@@ -17,6 +17,8 @@ Participant:
 
 ## TP1
 
+[Enoncé du TP1](https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n1/)
+
 Le TP1 est disponible dans le dossier `TP1`.
 Il se divise en 2 parties:
 
@@ -37,3 +39,7 @@ Vous trouverez ci-dessous les différents tests réussi pour le TP1:
       ![Alt text](Lab1/img/image-4.png)
 - [x] Exercice 5
       ![Alt text](Lab1/img/image-5.png)
+
+## TP2
+
+[Enoncé du TP2](https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n2/)
