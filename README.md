@@ -37,5 +37,3 @@ Vous trouverez ci-dessous les différents tests réussi pour le TP1:
       ![Alt text](Lab1/img/image-4.png)
 - [x] Exercice 5
       ![Alt text](Lab1/img/image-5.png)
-
-## TP2
