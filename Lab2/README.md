@@ -75,3 +75,9 @@ npm audit
 ## Exercise 6:
 
 Look at the webpack documentation (both home page and the concepts). What is its primary purpose and how does it fix our performance issue previously encountered with ES6-modules?
+
+Webpack is a module bundler. Its primary purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
+
+## Exercise 7:
+
+The webpack.config.js file is ready to build the aggregated bundle in development mode. The entry point is src/index.js. Bundle should be output at dist/index.js. You can run webpack using npm run build.
