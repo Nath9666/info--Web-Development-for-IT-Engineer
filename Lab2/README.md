@@ -75,9 +75,46 @@ npm audit
 ## Exercise 6:
 
 Look at the webpack documentation (both home page and the concepts). What is its primary purpose and how does it fix our performance issue previously encountered with ES6-modules?
-
+```
 Webpack is a module bundler. Its primary purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
+```
 
 ## Exercise 7:
 
 The webpack.config.js file is ready to build the aggregated bundle in development mode. The entry point is src/index.js. Bundle should be output at dist/index.js. You can run webpack using npm run build.
+
+## Exercise 8: 
+
+Open index-bundled.html in your browser (could be from the disc or from HTTP server). Does it actually fix the ES-module fetching performance issue ? Please provide some evidence in your answer.
+
+```
+Now when you launch it, you get the message "JS has been loaded succesfully".
+In addition, it is now possible to interact with the drop-down menu available when index-es6-modules.html is launched. And it displays something, as opposed to site index-bundled.html, which displayed nothing. 
+```
+Evidence : 
+![Alt text](Lab2/img/Exercice_8.png)
+
+## Exercise 9:
+
+Compare webpack’s output in development and in production mode:
+```
+The output of development will contain comments which explain the code and the criteria while the produciton mode will just produce the pure functional code.
+```
+
+## Exercise 10:
+
+Try the bundled app with Internet Explorer 11. Why IE does it fail to run the bundled app?
+
+```
+The bundled app fails to run in Internet Explorer 11 because IE 11 lacks support for certain JavaScript features and APIs that are used in the app.
+```
+
+## Exercice 11: 
+
+The following webpack’s configuration sends every .js to babel-loader. Babel transforms any syntax not supported by IE 11. Is it enough to ensure compatibility with IE? Why?
+
+```
+No, even though as the code in babel-loader indicated it is targeted for IE 11, but IE 11 requires more polyfills for the js features. In this case, we havn't imported core-js and whatwg-fetch (in case of using fetch fonction) which is essential for the applicaiton.
+```
+
+

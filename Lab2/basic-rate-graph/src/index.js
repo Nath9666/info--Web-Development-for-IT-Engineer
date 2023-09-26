@@ -1,6 +1,10 @@
 import { apiGetRateHistory } from './api.js'
 import { renderRates } from './table.js'
 
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+import 'whatwg-fetch';
+
 const feedbackParagraph = document.getElementById('js-init-feedback')
 const tickerSelect = document.getElementById('js-select-ticker')
 const domContainer = document.getElementById('js-output-container')
