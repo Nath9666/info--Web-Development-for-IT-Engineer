@@ -27,13 +27,10 @@ Launch a local HTTP server (seen in the lecture) and run the application from it
 
 - How many JS files were loaded ?
   There are 4 JS files loaded
-
 - How long does it take on average to load one ES6-module ?
   4 ms on average to load one ES6-module
-
 - What is the total completion time to load all JS files ?
   The total completion time to load all JS files is 20ms
-
 - Did the browser download JS files sequentially or in parallel ?
   The browser downloaded JS files in parallel (4 at the same time)
 
@@ -122,8 +119,24 @@ No, even though as the code in babel-loader indicated it is targeted for IE 11, 
 
 ## Exercice 12:
 
+Import the required polyfills from core-js and whatwg-fetch in index.js. Now, the app should work on IE 11.
+
 ![Alt text](/Lab2/img/Exercice_12.png?raw=true "Title")
 
 ## Exercice 13:
 
-TODO: a terminer
+List at least 2 issues of transpiling the code and adding polyfills like we did. Try to mention a mitigation or a solution for each issue.
+
+```
+Lors de la transpilation du code et de l'ajout de polyfills, il y a effectivement plusieurs problèmes potentiels auxquels nous devons faire face. Voici deux des problèmes les plus courants et leurs solutions possibles :
+
+Taille du bundle résultant : Lorsque nous transpilons notre code pour le rendre compatible avec des navigateurs plus anciens et que nous ajoutons des polyfills, cela peut augmenter considérablement la taille du bundle final. Cela peut entraîner des temps de chargement plus longs pour les utilisateurs, en particulier sur des connexions Internet plus lentes.
+
+Solution : Pour atténuer ce problème, nous pouvons utiliser des outils tels que Webpack pour diviser notre bundle en chunks, ce qui permet de charger uniquement le code nécessaire à une page donnée. De plus, nous pouvons envisager d'utiliser des services de diffusion de contenu (CDN) pour servir nos polyfills à partir de serveurs distribués, réduisant ainsi la latence de chargement.
+
+Compatibilité et performances : L'ajout de polyfills peut résoudre les problèmes de compatibilité, mais cela ne garantit pas toujours des performances optimales sur les navigateurs plus anciens. Certains polyfills peuvent être gourmands en ressources et ralentir l'exécution du code.
+
+Solution : Pour remédier à ce problème, nous pouvons utiliser des polyfills légers et spécifiques à nos besoins. Il est essentiel de tester notre application sur différents navigateurs pour identifier les goulots d'étranglement de performance et d'appliquer des optimisations spécifiques, comme le lazy loading des polyfills lorsque cela est possible.
+
+En résumé, la transpilation du code et l'ajout de polyfills sont des étapes essentielles pour garantir la compatibilité du code avec les navigateurs plus anciens, mais elles peuvent introduire des problèmes de taille de bundle et de performances. En utilisant des stratégies intelligentes de gestion de bundle et en optimisant l'ajout de polyfills, nous pouvons minimiser ces problèmes.
+```
