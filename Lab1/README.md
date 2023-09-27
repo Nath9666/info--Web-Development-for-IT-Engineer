@@ -13,12 +13,12 @@ Concernant le TP1 nous avez aussi la possibilité de lancer la comande `npm run 
 Vous trouverez ci-dessous les différents tests réussi pour le TP1:
 
 - [x] Exercice 1
-      ![Alt text](Lab1/img/image-1.png)
+      ![Alt text](/Lab1/img/image-1.png)
 - [x] Exercice 2
-      ![Alt text](Lab1/img/image-2.png)
+      ![Alt text](/Lab1/img/image-2.png)
 - [x] Exercice 3
-      ![Alt text](Lab1/img/image-3.png)
+      ![Alt text](/Lab1/img/image-3.png)
 - [x] Exercice 4
-      ![Alt text](Lab1/img/image-4.png)
+      ![Alt text](/Lab1/img/image-4.png)
 - [x] Exercice 5
-      ![Alt text](Lab1/img/image-5.png)
+      ![Alt text](/Lab1/img/image-5.png)
