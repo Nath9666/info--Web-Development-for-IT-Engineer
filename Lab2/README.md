@@ -1,4 +1,5 @@
 # TP2
+On vous informe que le dossier node_module n'est pas present pour des raisons d'optimisation de donnée
 
 [Enoncé du TP2](https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n2/)
 
