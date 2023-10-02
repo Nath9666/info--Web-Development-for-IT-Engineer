@@ -66,3 +66,15 @@ So you can find a file named HomePage.vue in the pages folder. I have also added
 ### Exercise 5
 
 > Let’s begin with the root component, formally App (in src/App.vue). Replace its template with the following content and create the missing components. Add some content to the header (ex. fake home link, fake user name…) and legal credits to the footer. Eventually, polish the looks and feels with scoped CSS.
+
+So we create 2 more file nammed [baseFooter.vue](./vue-oauth-microsoft-graph/src/components/baseFooter.vue) and [baseHeader.vue](./vue-oauth-microsoft-graph/src/components/baseHeader.vue) in the components folder. We also add a reference to them in the App.vue file.
+
+### Questions 5
+
+> What is the difference between scoped and non-scoped CSS?
+
+The difference between scoped and non-scoped CSS is that scoped CSS is only applied to the component where it is defined. Non-scoped CSS is applied to all the components.
+
+### Exercise 6
+
+> In order to keep the root component App as simple as possible, extract everything related to the layout into a BaseLayout component. Using the slot API, allow BaseLayout to receive children (to be rendered between the header and the footer).
