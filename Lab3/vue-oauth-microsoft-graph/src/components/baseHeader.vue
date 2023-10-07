@@ -55,6 +55,7 @@ export default {
 .nav-bar div {
   display: flex;
   align-items: center;
+  
 }
 
 .nav-bar div svg {

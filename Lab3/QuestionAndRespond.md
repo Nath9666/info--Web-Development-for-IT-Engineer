@@ -1,6 +1,6 @@
 # Question and respond on Lab3
 
-[Lab link](https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/)
+* [ ] [Lab link](https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/)
 
 ## Vue project setup
 
