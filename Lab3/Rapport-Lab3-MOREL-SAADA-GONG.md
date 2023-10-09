@@ -1,6 +1,18 @@
-# Question and respond on Lab3
+# Rapport du Lab 3
+
+Le lien de l'ennoncé
 
 - [Lab link](https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/)
+
+Vous retrouverez dans ce rapport les différentes explications des exercices ansi que les réponses des exercices.
+
+Nous avons recopier l'énoncée.
+
+Participants:
+
+- [Nathan_Morel]()
+- [Laura_SAADA]()
+- [Minggao_GONG]()
 
 ## Vue project setup
 
