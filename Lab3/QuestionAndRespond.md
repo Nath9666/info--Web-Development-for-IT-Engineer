@@ -69,6 +69,8 @@ So you can find a file named HomePage.vue in the pages folder. I have also added
 
 So we create 2 more file nammed [baseFooter.vue](./vue-oauth-microsoft-graph/src/components/baseFooter.vue) and [baseHeader.vue](./vue-oauth-microsoft-graph/src/components/baseHeader.vue) in the components folder. We also add a reference to them in the App.vue file.
 
+![Alt text](.\screen\ex5.png)
+
 ### Questions 5
 
 > What is the difference between scoped and non-scoped CSS?
@@ -93,11 +95,15 @@ The non-prop attributes passed down to a component are added to the root element
 
 We wrote a new file in [baseButton](Lab3\vue-oauth-microsoft-graph\src\components\baseButton.vue) and we added a reference to it in the HomePage.vue file.
 
+![Alt text](.\screen\ex7.png)
+
 ### Exercice 8
 
 > Add the color prop to BaseButton. This prop accepts one of 'primary', 'warn' or 'danger' values. It defaults to primary and you should validate the given value matches the enum. Then, dynamically apply styles to the button based on that prop.
 
 We modify the [baseButton](Lab3\vue-oauth-microsoft-graph\src\components\baseButton.vue) file to add the color prop and to apply the style based on the prop.
+
+![Alt text](.\screen\ex8.png)
 
 ### Exercice 9
 
