@@ -5,16 +5,18 @@
     <BaseButton disabled="true">Disabled Button</BaseButton>
     <BaseButton color="warn">Warn Button</BaseButton>
     <BaseButton color="danger">Danger Button</BaseButton>
+    <AsyncButton>Async Button</AsyncButton>
   </div>
 </template>
 
 <script>
 import BaseButton from "../components/baseButton.vue";
+import AsyncButton from "../components/asyncButton.vue";
 
 export default {
   name: "HomePage",
   props: {},
-  components: { BaseButton },
+  components: { BaseButton, AsyncButton },
 };
 </script>
 

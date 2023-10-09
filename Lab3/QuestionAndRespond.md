@@ -1,6 +1,6 @@
 # Question and respond on Lab3
 
-- [ ] [Lab link](https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/)
+- [Lab link](https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/)
 
 ## Vue project setup
 
@@ -98,3 +98,20 @@ We wrote a new file in [baseButton](Lab3\vue-oauth-microsoft-graph\src\component
 > Add the color prop to BaseButton. This prop accepts one of 'primary', 'warn' or 'danger' values. It defaults to primary and you should validate the given value matches the enum. Then, dynamically apply styles to the button based on that prop.
 
 We modify the [baseButton](Lab3\vue-oauth-microsoft-graph\src\components\baseButton.vue) file to add the color prop and to apply the style based on the prop.
+
+## Exercice 9
+
+> Add a button to the HomePage that is disabled for 2 seconds each time it is clicked. According to the above code, this just means the @click event listener attached to the instance of AsyncComponent instance returns a Promise that waits for 2 seconds before resolving. You can create such a Promise using its constructor and a setTimeout. Also, please write the event handler inside a dedicated method since at is a bit complex.
+
+So we create a [AsynButton](.\vue-oauth-microsoft-graph\src\components\asyncButton.vue) in the [HomePage](.\vue-oauth-microsoft-graph\src\pages\HomePage.vue) file. With this code :
+
+```js
+ handleClick() {
+      setTimeout(() => {
+        this.isPending = !this.isPending;
+      }, 2000);
+      this.isPending = !this.isPending;
+    },
+```
+
+
