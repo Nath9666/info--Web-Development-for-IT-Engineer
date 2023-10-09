@@ -57,11 +57,14 @@ export default {
 
 <style scoped>
 button {
+  align-items: center;
+  display: flex;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 10px;
   cursor: pointer;
   border: none;
   margin: 5px;
+  color: white;
   border-radius: 5px;
   background-color: var(--color);
   transition: background-color 0.3s ease;

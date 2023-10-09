@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <div>
+    <BaseButton>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -15,8 +15,8 @@
         />
       </svg>
       <p>Home</p>
-    </div>
-    <div>
+    </BaseButton>
+    <BaseButton>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -30,14 +30,19 @@
         />
       </svg>
       <p>Not yet logged-in</p>
-    </div>
+    </BaseButton>
   </div>
 </template>
 
 <script>
+import BaseButton from "./baseButton.vue";
+
 export default {
   name: "BaseHeader",
   props: {},
+  components: {
+    BaseButton,
+  },
 };
 </script>
 
@@ -47,20 +52,19 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #41d657;
+  background-color: #29b883;
   color: black;
   padding: 10px;
 }
 
-.nav-bar div {
-  display: flex;
-  align-items: center;
-  
+.nav-bar p {
+  font-size: 16px;
 }
 
-.nav-bar div svg {
+.nav-bar svg {
   width: 50px;
   height: 50px;
   margin-right: 10px;
+  align-items: center;
 }
 </style>
