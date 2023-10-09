@@ -151,3 +151,13 @@ To do this we modify the [AsynButton](.\vue-oauth-microsoft-graph\src\components
 ![Alt text](.\screen\ex10-incrementationButton.png)
 
 ### Question 7
+
+> Analyse how works the AsyncButton. How the child component is aware of the returned Promise by the parent onClick handler? When is executed the callback passed to .finally()? Why use .finally() instead of .then()? Etc.
+
+The child component is aware of the returned Promise by the parent onClick handler because the parent component is passing the promise to the child component. The callback passed to .finally() is executed when the promise is resolved or rejected. We use .finally() instead of .then() because .finally() is executed when the promise is resolved or rejected.
+
+### Question 8
+
+> Which bug is introduced if inheritAttrs: false is missing or set to true in AsyncButton? Why?
+
+If inheritAttrs: false is missing or set to true in AsyncButton, the button will have the attributes of the parent component. This is a bug because the button will have the attributes of the parent component and not the attributes of the button.
