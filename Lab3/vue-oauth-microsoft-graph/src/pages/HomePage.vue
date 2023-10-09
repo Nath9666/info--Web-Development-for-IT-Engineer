@@ -1,8 +1,10 @@
 <template>
   <div class="hello">
     <h1>Here comes the content of the HomePage</h1>
-    <BaseButton color="primary">Click me</BaseButton>
-    <BaseButton disabled="true" color="danger">Disabled Button</BaseButton>
+    <BaseButton>Click me</BaseButton>
+    <BaseButton disabled="true">Disabled Button</BaseButton>
+    <BaseButton color="warn">Warn Button</BaseButton>
+    <BaseButton color="danger">Danger Button</BaseButton>
   </div>
 </template>
 

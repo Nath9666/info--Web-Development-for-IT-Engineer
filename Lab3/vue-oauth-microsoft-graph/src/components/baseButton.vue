@@ -36,11 +36,11 @@ export default {
     getColor() {
       switch (this.color) {
         case "warn":
-          return "#e74c3c"; // Red color
+          return "#ff552f"; // Red color
         case "danger":
-          return "#f39c12"; // Orange color
+          return "#ee373b"; // Orange color
         default:
-          return "#42b983"; // Default blue color for 'primary'
+          return "#29b883"; // Default blue color for 'primary'
       }
     },
   },
@@ -59,6 +59,7 @@ button {
   font-size: 16px;
   cursor: pointer;
   border: none;
+  margin: 5px;
   border-radius: 5px;
   background-color: var(--color);
   transition: background-color 0.3s ease;
@@ -70,6 +71,7 @@ button:hover {
 
 button:disabled {
   cursor: not-allowed;
+  opacity: 0.7;
 }
 
 button:disabled:hover {
@@ -77,8 +79,12 @@ button:disabled:hover {
 }
 
 button.focused {
-  outline: 2px solid rgba(52, 152, 219, 0.8);
-  /* Adjust the outline color as needed */
+  outline: 2px solid;
+  outline-color: var(--color);
+  border: 1px solid;
+  border-color: white;
+  /* outline-color: var(--color); */
+  /*outline-style: lighten(var(--color, 20%));*/
 }
 
 /* Add other styles as needed */
