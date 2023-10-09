@@ -52,7 +52,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #29b883;
+  background-color: #42b983;
   color: black;
   padding: 10px;
 }
