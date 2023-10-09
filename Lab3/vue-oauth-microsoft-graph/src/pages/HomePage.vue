@@ -1,19 +1,24 @@
 <template>
   <div class="hello">
     <h1>Here comes the content of the HomePage</h1>
+    <BaseButton color="#4caf50">Click me</BaseButton>
+    <BaseButton disabled="true" color="#e74c3c">Disabled Button</BaseButton>
   </div>
 </template>
 
 <script>
+import BaseButton from "../components/baseButton.vue";
+
 export default {
   name: "HomePage",
   props: {},
+  components: { BaseButton },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
+div {
   color: black;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   padding: 2%;

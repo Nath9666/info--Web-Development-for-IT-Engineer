@@ -1,6 +1,6 @@
 # Question and respond on Lab3
 
-* [ ] [Lab link](https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/)
+- [ ] [Lab link](https://thomas-veillard.fr/front-end-web-development/vue/01-vue-practical-activity-part-n1/)
 
 ## Vue project setup
 
@@ -78,3 +78,15 @@ The difference between scoped and non-scoped CSS is that scoped CSS is only appl
 ### Exercise 6
 
 > In order to keep the root component App as simple as possible, extract everything related to the layout into a BaseLayout component. Using the slot API, allow BaseLayout to receive children (to be rendered between the header and the footer).
+
+So we worte a new file in [baseContent](Lab3\vue-oauth-microsoft-graph\src\components\baseContent.vue) to group the baseheader and the baseFooter.
+
+## Question 6
+
+> How behaves non-prop attributes passed down to a component, when its template has a single root element? **Tips** : it is well documented by vue, but you can also try it youself by passing the `style` attribute with a straight visual effect.
+
+The non-prop attributes passed down to a component are added to the root element of the component. If the template has a single root element, the non-prop attributes are added to this element. If the template has multiple root elements, the non-prop attributes are added to the first root element.
+
+## Exercie 7
+
+> Implement such a BaseButton, animated on hover and focus. Do not forget the disabled state. You may try these buttons on your HomePage for now.
