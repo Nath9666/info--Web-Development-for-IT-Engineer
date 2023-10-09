@@ -90,3 +90,11 @@ The non-prop attributes passed down to a component are added to the root element
 ## Exercie 7
 
 > Implement such a BaseButton, animated on hover and focus. Do not forget the disabled state. You may try these buttons on your HomePage for now.
+
+We wrote a new file in [baseButton](Lab3\vue-oauth-microsoft-graph\src\components\baseButton.vue) and we added a reference to it in the HomePage.vue file.
+
+## Exercice 8
+
+> Add the color prop to BaseButton. This prop accepts one of 'primary', 'warn' or 'danger' values. It defaults to primary and you should validate the given value matches the enum. Then, dynamically apply styles to the button based on that prop.
+
+We modify the [baseButton](Lab3\vue-oauth-microsoft-graph\src\components\baseButton.vue) file to add the color prop and to apply the style based on the prop.

@@ -21,14 +21,27 @@ export default {
     },
     color: {
       type: String,
-      default: "#3498db",
+      default: "primary",
+      validator: (value) => ["primary", "warn", "danger"].includes(value),
     },
   },
   computed: {
     cssVars() {
       return {
-        "--color": this.color,
+        "--color": this.getColor(),
       };
+    },
+  },
+  methods: {
+    getColor() {
+      switch (this.color) {
+        case "warn":
+          return "#e74c3c"; // Red color
+        case "danger":
+          return "#f39c12"; // Orange color
+        default:
+          return "#3498db"; // Default blue color for 'primary'
+      }
     },
   },
   data() {
@@ -56,6 +69,7 @@ button:hover {
 }
 
 button:disabled {
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
