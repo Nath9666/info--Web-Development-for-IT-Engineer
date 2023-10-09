@@ -28,7 +28,9 @@ export default {
   computed: {
     cssVars() {
       return {
-        "--color": this.getColor(),
+        "--color": this.getColor().bg,
+        "--hover-color": this.getColor().hoverBg,
+        "--focus-color": this.getColor().focusBorder,
       };
     },
   },
@@ -36,11 +38,11 @@ export default {
     getColor() {
       switch (this.color) {
         case "warn":
-          return "#ff552f"; // Red color
+          return { bg: "#ff5722", hoverBg: "#ff7043", focusBorder: "#ff8a65" }; // Red color
         case "danger":
-          return "#ee373b"; // Orange color
+          return { bg: "#e53935", hoverBg: "#ef5350", focusBorder: "#e57373" }; // Orange color
         default:
-          return "#29b883"; // Default blue color for 'primary'
+          return { bg: "#42b983", hoverBg: "#4cce93", focusBorder: "#47d696" }; // Default blue color for 'primary'
       }
     },
   },
@@ -66,7 +68,7 @@ button {
 }
 
 button:hover {
-  background-color: darken(var(--color), 10%);
+  background-color: var(--hover-color);
 }
 
 button:disabled {
@@ -80,7 +82,7 @@ button:disabled:hover {
 
 button.focused {
   outline: 2px solid;
-  outline-color: var(--color);
+  outline-color: var(--focus-color);
   border: 1px solid;
   border-color: white;
   /* outline-color: var(--color); */
