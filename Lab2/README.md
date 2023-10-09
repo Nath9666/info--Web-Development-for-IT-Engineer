@@ -1,4 +1,5 @@
 # TP2
+
 On vous informe que le dossier node_module n'est pas present pour des raisons d'optimisation de donnée
 
 [Enoncé du TP2](https://thomas-veillard.fr/front-end-web-development/languages/javascript-practical-activity-n2/)
@@ -92,7 +93,7 @@ In addition, it is now possible to interact with the drop-down menu available wh
 ```
 
 Evidence :
-![Alt text](/Lab2/img/Exercice_8.png?raw=true "Title")
+![Alt text](./Lab2/img/Exercice_8.png?raw=true "Title")
 
 ## Exercise 9:
 
@@ -122,7 +123,7 @@ No, even though as the code in babel-loader indicated it is targeted for IE 11, 
 
 Import the required polyfills from core-js and whatwg-fetch in index.js. Now, the app should work on IE 11.
 
-![Alt text](/Lab2/img/Exercice_12.png?raw=true "Title")
+![Alt text](./Lab2/img/Exercice_12.png?raw=true "Title")
 
 ## Exercice 13:
 

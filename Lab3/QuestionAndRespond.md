@@ -114,4 +114,10 @@ So we create a [AsynButton](.\vue-oauth-microsoft-graph\src\components\asyncButt
     },
 ```
 
+| Normal                              | Quand on appuie sur le bouton        |
+| ----------------------------------- | ------------------------------------ |
+| ![Alt text](.\screen\Ex9-async.png) | ![Alt text](.\screen\Ex9-async2.png) |
 
+## Exercice 10
+
+> Change the behaviour of the previous button, so its waiting time increases by one second each it is clicked. Because AsyncButton waits for any promise, whatever how long it takes to resolve, you do not need and you should not change it. Instead, keep trace of the number of clicks in the internal state (data) of the HomePage component (see the counter app example) and use it while forging new promises.
