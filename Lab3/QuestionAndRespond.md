@@ -81,25 +81,25 @@ The difference between scoped and non-scoped CSS is that scoped CSS is only appl
 
 So we worte a new file in [baseContent](Lab3\vue-oauth-microsoft-graph\src\components\baseContent.vue) to group the baseheader and the baseFooter.
 
-## Question 6
+### Question 6
 
 > How behaves non-prop attributes passed down to a component, when its template has a single root element? **Tips** : it is well documented by vue, but you can also try it youself by passing the `style` attribute with a straight visual effect.
 
 The non-prop attributes passed down to a component are added to the root element of the component. If the template has a single root element, the non-prop attributes are added to this element. If the template has multiple root elements, the non-prop attributes are added to the first root element.
 
-## Exercie 7
+### Exercice 7
 
 > Implement such a BaseButton, animated on hover and focus. Do not forget the disabled state. You may try these buttons on your HomePage for now.
 
 We wrote a new file in [baseButton](Lab3\vue-oauth-microsoft-graph\src\components\baseButton.vue) and we added a reference to it in the HomePage.vue file.
 
-## Exercice 8
+### Exercice 8
 
 > Add the color prop to BaseButton. This prop accepts one of 'primary', 'warn' or 'danger' values. It defaults to primary and you should validate the given value matches the enum. Then, dynamically apply styles to the button based on that prop.
 
 We modify the [baseButton](Lab3\vue-oauth-microsoft-graph\src\components\baseButton.vue) file to add the color prop and to apply the style based on the prop.
 
-## Exercice 9
+### Exercice 9
 
 > Add a button to the HomePage that is disabled for 2 seconds each time it is clicked. According to the above code, this just means the @click event listener attached to the instance of AsyncComponent instance returns a Promise that waits for 2 seconds before resolving. You can create such a Promise using its constructor and a setTimeout. Also, please write the event handler inside a dedicated method since at is a bit complex.
 
@@ -121,3 +121,33 @@ So we create a [AsynButton](.\vue-oauth-microsoft-graph\src\components\asyncButt
 ## Exercice 10
 
 > Change the behaviour of the previous button, so its waiting time increases by one second each it is clicked. Because AsyncButton waits for any promise, whatever how long it takes to resolve, you do not need and you should not change it. Instead, keep trace of the number of clicks in the internal state (data) of the HomePage component (see the counter app example) and use it while forging new promises.
+
+To do this we modify the [AsynButton](.\vue-oauth-microsoft-graph\src\components\asyncButton.vue) in the [HomePage](.\vue-oauth-microsoft-graph\src\pages\HomePage.vue) file. With this code :
+
+```js
+  handleClick() {
+      console.log("Async button clicked", this.timer);
+
+      // Create a new promise with the current timer value
+      const asyncOperation = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, this.timer);
+      });
+
+      // Update timer for the next click
+      this.timer += 1000;
+
+      // Toggle isPending when promise resolves
+      asyncOperation.then(() => {
+        this.isPending = !this.isPending;
+      });
+
+      // Toggle isPending immediately
+      this.isPending = !this.isPending;
+    },
+```
+
+![Alt text](.\screen\ex10-incrementationButton.png)
+
+### Question 7

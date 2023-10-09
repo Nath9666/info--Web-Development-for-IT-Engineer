@@ -5,7 +5,9 @@
     <BaseButton disabled="true">Disabled Button</BaseButton>
     <BaseButton color="warn">Warn Button</BaseButton>
     <BaseButton color="danger">Danger Button</BaseButton>
-    <AsyncButton>Async Button</AsyncButton>
+    <AsyncButton :color="'primary'" :initialTimer="timer">
+      Click me asynchronously
+    </AsyncButton>
   </div>
 </template>
 
@@ -15,12 +17,20 @@ import AsyncButton from "../components/asyncButton.vue";
 
 export default {
   name: "HomePage",
-  props: {},
   components: { BaseButton, AsyncButton },
+  data() {
+    return {
+      clickCount: 0,
+    };
+  },
+  computed: {
+    timer() {
+      return this.clickCount * 1000;
+    },
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div {
   color: black;

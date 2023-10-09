@@ -22,19 +22,39 @@ export default {
       type: String,
       default: "primary",
     },
+    initialTimer: {
+      type: Number,
+      default: 2000,
+    },
   },
 
   data() {
     return {
       isPending: false,
+      timer: this.initialTimer,
     };
   },
 
   methods: {
     handleClick() {
-      setTimeout(() => {
+      console.log("Async button clicked", this.timer);
+
+      // Create a new promise with the current timer value
+      const asyncOperation = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, this.timer);
+      });
+
+      // Update timer for the next click
+      this.timer += 1000;
+
+      // Toggle isPending when promise resolves
+      asyncOperation.then(() => {
         this.isPending = !this.isPending;
-      }, 2000);
+      });
+
+      // Toggle isPending immediately
       this.isPending = !this.isPending;
     },
   },
