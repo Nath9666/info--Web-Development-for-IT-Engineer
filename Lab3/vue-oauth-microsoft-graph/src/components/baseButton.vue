@@ -40,7 +40,7 @@ export default {
         case "danger":
           return "#f39c12"; // Orange color
         default:
-          return "#3498db"; // Default blue color for 'primary'
+          return "#42b983"; // Default blue color for 'primary'
       }
     },
   },
@@ -69,7 +69,6 @@ button:hover {
 }
 
 button:disabled {
-  opacity: 0.5;
   cursor: not-allowed;
 }
 
