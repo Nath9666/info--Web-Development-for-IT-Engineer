@@ -16,7 +16,7 @@
       </svg>
       <p>Home</p>
     </BaseButton>
-    <BaseButton>
+    <SigninButton>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -30,18 +30,20 @@
         />
       </svg>
       <p>Not yet logged-in</p>
-    </BaseButton>
+    </SigninButton>
   </div>
 </template>
 
 <script>
 import BaseButton from "./baseButton.vue";
+import SigninButton from "./signinButton.vue";
 
 export default {
   name: "BaseHeader",
   props: {},
   components: {
     BaseButton,
+    SigninButton,
   },
 };
 </script>

@@ -88,9 +88,5 @@ button.focused {
   outline-color: var(--focus-color);
   border: 1px solid;
   border-color: white;
-  /* outline-color: var(--color); */
-  /*outline-style: lighten(var(--color, 20%));*/
 }
-
-/* Add other styles as needed */
 </style>
