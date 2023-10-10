@@ -9,8 +9,9 @@ const requestedScopes = {
 };
 
 let msalInstance = null;
+let isMsalInitialized = false;
 
-export function initializeMsal() {
+export async function initializeMsal() {
   msalInstance = new msal.PublicClientApplication({
     auth: {
       clientId: process.env.VUE_APP_OAUTH_CLIENT_ID,
@@ -19,10 +20,12 @@ export function initializeMsal() {
       cacheLocation: "sessionStorage",
     },
   });
+  console.log("MSAL initialized");
+  isMsalInitialized = true;
 }
 
 export async function signInAndGetUser() {
-  if (!msalInstance) {
+  if (!isMsalInitialized) {
     throw new Error("MSAL not initialized. Call initializeMsal first.");
   }
 

@@ -13,7 +13,7 @@
 
 <script>
 import BaseButton from "./baseButton.vue";
-import { signInAndGetUser, initializeMsal } from "@/lib/microsoftGraph.js";
+import { initializeMsal, signInAndGetUser } from "../lib/microsoftGraph.js";
 
 export default {
   name: "SigninButton",
@@ -29,7 +29,7 @@ export default {
   methods: {
     async signIn() {
       try {
-        initializeMsal(); // Initialise MSAL avant d'appeler signInAndGetUser
+        await initializeMsal(); // Assurez-vous que MSAL est initialisé avant de signer
         const user = await signInAndGetUser();
         this.userData = user;
         // Faites plus avec les données de l'utilisateur si nécessaire
