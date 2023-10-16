@@ -6,14 +6,14 @@
 
     <div v-if="userData">
       <!-- Affichez les informations de l'utilisateur ici -->
-      {{ userData }}
+      {{ userData.account.username }}
     </div>
   </div>
 </template>
 
 <script>
 import BaseButton from "./baseButton.vue";
-import { initializeMsal, signInAndGetUser } from "../lib/microsoftGraph.js";
+import { signInAndGetUser } from "../lib/microsoftGraph.js";
 
 export default {
   name: "SigninButton",
@@ -29,7 +29,6 @@ export default {
   methods: {
     async signIn() {
       try {
-        await initializeMsal(); // Assurez-vous que MSAL est initialisé avant de signer
         const user = await signInAndGetUser();
         this.userData = user;
         // Faites plus avec les données de l'utilisateur si nécessaire

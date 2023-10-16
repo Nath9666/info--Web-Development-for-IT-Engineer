@@ -1,35 +1,22 @@
-// file src/lib/microsoftGraph.js
 import * as msal from "@azure/msal-browser";
 
-/**
- * List the requested scopes (aka. the requested permissions)
- */
-const requestedScopes = {
-  scopes: ["User.Read"],
-};
-
-let msalInstance = null;
-let isMsalInitialized = false;
-
-export async function initializeMsal() {
-  msalInstance = new msal.PublicClientApplication({
-    auth: {
-      clientId: process.env.VUE_APP_OAUTH_CLIENT_ID,
-    },
-    cache: {
-      cacheLocation: "sessionStorage",
-    },
-  });
-  console.log("MSAL initialized");
-  isMsalInitialized = true;
-}
+const requestedScopes = { scopes: ["User.Read"] };
+const msalInstance = new msal.PublicClientApplication({
+  auth: {
+    clientId: process.env.VUE_APP_OAUTH_CLIENT_ID,
+    redirectUri: "http://localhost:8081/",
+  },
+  cache: { cacheLocation: "sessionStorage" },
+});
 
 export async function signInAndGetUser() {
-  if (!isMsalInitialized) {
-    throw new Error("MSAL not initialized. Call initializeMsal first.");
+  try {
+    const authResult = await msalInstance.loginPopup(requestedScopes);
+    msalInstance.setActiveAccount(authResult.account);
+    console.log(authResult.account.username);
+    return { account: authResult.account, ok: true };
+  } catch (error) {
+    console.error(error);
+    return { ok: false };
   }
-
-  const authResult = await msalInstance.loginPopup(requestedScopes);
-  msalInstance.setActiveAccount(authResult.account);
-  return authResult.account;
 }
