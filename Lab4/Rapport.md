@@ -25,7 +25,16 @@ Then we create a new component `SigninButton.vue` in the `src/components` folder
 
 We take the api code in the [Azure link](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Overview/appId/196ef638-917b-4f82-b655-7d3c80154af4/objectId/0662321b-23ab-4dd8-be09-9a0ee316d37c/isMSAApp~/false/defaultBlade/Overview/appSignInAudience/AzureADandPersonalMicrosoftAccount/servicePrincipalCreated~/true) and we put in the .env.development.local file.
 
+So to correctly use the api, we need to check 2 or more things :
+
+- we have on your machine the right version of azure/msal-browser (3.2.0)
+- we have the right VUE_APP_CLIENT_ID in the .env.development.local file (196ef638-917b-4f82-b655-7d3c80154af4)
+- we have to verify that the redirectUri in [microsoftGraph](.\vue-oauth-microsoft-graph\src\lib\microsoftGraph.js) for exemple in my machine is http://localhost:8080/ (the port can change depending on the port used by the server)
+
+Then we can start the server with `npm run serve` and we can see the button on the page.
+
 ### Exercice 2
+
 > Use props to share the user with both SigninComponent and HomePage. Then use events to update the shared user from SigninComponent. Eventually, display the user name in HomePage.
 
-So we modify the page 
+So we modify the page

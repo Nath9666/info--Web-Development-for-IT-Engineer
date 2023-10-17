@@ -4,9 +4,13 @@ const requestedScopes = { scopes: ["User.Read"] };
 const msalInstance = new msal.PublicClientApplication({
   auth: {
     clientId: process.env.VUE_APP_OAUTH_CLIENT_ID,
-    redirectUri: "http://localhost:8081/",
+    redirectUri: "http://localhost:8080/",
   },
   cache: { cacheLocation: "sessionStorage" },
+});
+
+msalInstance.initialize().then(() => {
+  console.log("MSAL initialized");
 });
 
 export async function signInAndGetUser() {
