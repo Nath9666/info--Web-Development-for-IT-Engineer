@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
     <h1>Here comes the content of the HomePage</h1>
+    <div v-if="user">
+      <!-- Affichez le nom d'utilisateur ici -->
+      {{ user.account.username }}
+    </div>
     <BaseButton>Click me</BaseButton>
     <BaseButton disabled="true">Disabled Button</BaseButton>
     <BaseButton color="warn">Warn Button</BaseButton>
@@ -18,6 +22,7 @@ import AsyncButton from "../components/asyncButton.vue";
 export default {
   name: "HomePage",
   components: { BaseButton, AsyncButton },
+  props: { user: Object },
   data() {
     return {
       clickCount: 0,

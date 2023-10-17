@@ -24,3 +24,8 @@ So to start the exercice, we copy the repository on [Lab3](..\Lab3) and we insta
 Then we create a new component `SigninButton.vue` in the `src/components` folder.
 
 We take the api code in the [Azure link](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Overview/appId/196ef638-917b-4f82-b655-7d3c80154af4/objectId/0662321b-23ab-4dd8-be09-9a0ee316d37c/isMSAApp~/false/defaultBlade/Overview/appSignInAudience/AzureADandPersonalMicrosoftAccount/servicePrincipalCreated~/true) and we put in the .env.development.local file.
+
+### Exercice 2
+> Use props to share the user with both SigninComponent and HomePage. Then use events to update the shared user from SigninComponent. Eventually, display the user name in HomePage.
+
+So we modify the page 

@@ -1,5 +1,5 @@
 <template>
-  <base-content>
+  <base-content :user="user">
     <HomePage />
   </base-content>
 </template>
@@ -13,6 +13,11 @@ export default {
   components: {
     HomePage,
     BaseContent,
+  },
+  data() {
+    return {
+      user: null,
+    };
   },
 };
 </script>

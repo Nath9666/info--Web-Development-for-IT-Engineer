@@ -5,7 +5,6 @@
     </base-button>
 
     <div v-if="userData">
-      <!-- Affichez les informations de l'utilisateur ici -->
       {{ userData.account.username }}
     </div>
   </div>
@@ -17,7 +16,9 @@ import { signInAndGetUser } from "../lib/microsoftGraph.js";
 
 export default {
   name: "SigninButton",
-  props: {},
+  props: {
+    user: Object,
+  },
   components: {
     BaseButton,
   },
@@ -31,7 +32,8 @@ export default {
       try {
         const user = await signInAndGetUser();
         this.userData = user;
-        // Faites plus avec les données de l'utilisateur si nécessaire
+        this.$emit("userSignedIn", user);
+        return user;
       } catch (error) {
         console.error("Erreur de connexion:", error);
       }
@@ -40,5 +42,4 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped></style>

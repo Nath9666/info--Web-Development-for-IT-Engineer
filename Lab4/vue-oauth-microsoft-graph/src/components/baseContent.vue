@@ -1,7 +1,7 @@
 <template>
   <div>
     <BaseHeader />
-    <slot></slot>
+    <slot :user="user"></slot>
     <BaseFooter />
   </div>
 </template>
@@ -16,7 +16,9 @@ export default {
     BaseHeader,
     BaseFooter,
   },
-  props: {},
+  props: {
+    user: Object,
+  },
 };
 </script>
 
