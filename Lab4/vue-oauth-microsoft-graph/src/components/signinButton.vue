@@ -1,8 +1,8 @@
 <template>
   <div>
-    <base-button @click="signIn">
+    <asyncButton @click="signIn">
       <slot></slot>
-    </base-button>
+    </asyncButton>
 
     <div v-if="userData">
       {{ userData }}
@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import BaseButton from "./baseButton.vue";
+import asyncButton from "./asyncButton.vue";
 import { signInAndGetUser } from "../lib/microsoftGraph.js";
 
 export default {
   name: "SigninButton",
   props: {},
   components: {
-    BaseButton,
+    asyncButton,
   },
   data() {
     return {

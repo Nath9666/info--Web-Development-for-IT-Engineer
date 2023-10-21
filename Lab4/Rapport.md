@@ -33,6 +33,8 @@ So to correctly use the api, we need to check 2 or more things :
 
 Then we can start the server with `npm run serve` and we can see the button on the page.
 
+If there are a bug, check on the browser's console
+
 ### Exercice 2
 
 > Use props to share the user with both SigninComponent and HomePage. Then use events to update the shared user from SigninComponent. Eventually, display the user name in HomePage.
