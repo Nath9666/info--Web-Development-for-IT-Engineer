@@ -46,3 +46,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped></style>
+
+// https://www.youtube.com/watch?v=BskYnvm18BQ //
+https://www.youtube.com/watch?v=i2NrIARxIk8
