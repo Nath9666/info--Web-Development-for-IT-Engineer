@@ -16,7 +16,7 @@
       </svg>
       <p>Home</p>
     </BaseButton>
-    <SigninButton :user="user" @userChanged="user">
+    <SigninButton :user="user" @userChanged="setUser($event)">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -30,7 +30,6 @@
         />
       </svg>
       <p>Not yet logged-in</p>
-      <h>{{ user }}</h>
     </SigninButton>
   </div>
 </template>
@@ -38,15 +37,26 @@
 <script>
 import BaseButton from "./baseButton.vue";
 import SigninButton from "./signinButton.vue";
+import { ref } from "vue";
 
 export default {
   name: "BaseHeader",
-  props: {
-    user: Object,
-  },
   components: {
     BaseButton,
     SigninButton,
+  },
+  setup(props, { emit }) {
+    let user = ref(null);
+
+    function setUser(e) {
+      user.value = e;
+      emit("userChanged", e); // Émettre l'événement userChanged
+    }
+
+    return {
+      user,
+      setUser,
+    };
   },
 };
 </script>

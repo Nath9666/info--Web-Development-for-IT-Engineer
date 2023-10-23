@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>{{ user }}</h1>
     <BaseButton @click="signIn">
       <slot></slot>
     </BaseButton>
@@ -10,6 +9,7 @@
 <script>
 import BaseButton from "./baseButton.vue";
 import { signInAndGetUser } from "../lib/microsoftGraph.js";
+import { ref } from "vue";
 
 export default {
   name: "SigninButton",
@@ -19,33 +19,28 @@ export default {
   components: {
     BaseButton,
   },
-  data() {
-    return {
-      userData: null,
-    };
-  },
-  emits: ["userChanged", "submit"],
-  setup(props, ctx) {
-    ctx.emit("userChanged", props.user);
-  },
-  methods: {
-    async signIn() {
+  setup(props, { emit }) {
+    let userData = ref(null);
+
+    async function signIn() {
       try {
         const user = await signInAndGetUser();
-        this.userData = user;
+        userData.value = user;
         console.log("Utilisateur connecté:", user);
-        this.$emit("userChanged", user);
+        emit("userChanged", userData);
         return user;
       } catch (error) {
         console.error("Erreur de connexion:", error);
       }
-    },
+    }
+
+    return {
+      userData,
+      signIn,
+    };
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped></style>
-
-// https://www.youtube.com/watch?v=BskYnvm18BQ //
-https://www.youtube.com/watch?v=i2NrIARxIk8

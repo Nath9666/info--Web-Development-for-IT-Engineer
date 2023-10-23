@@ -4,7 +4,7 @@ const requestedScopes = { scopes: ["User.Read"] };
 const msalInstance = new msal.PublicClientApplication({
   auth: {
     clientId: process.env.VUE_APP_OAUTH_CLIENT_ID,
-    redirectUri: "http://localhost:8080/",
+    redirectUri: "http://localhost:8081/",
   },
   cache: { cacheLocation: "sessionStorage" },
 });

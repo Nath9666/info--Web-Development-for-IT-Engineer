@@ -8,7 +8,6 @@
     <AsyncButton :color="'primary'" :initialTimer="timer">
       Click me asynchronously
     </AsyncButton>
-    <h>{{ user }}</h>
   </div>
 </template>
 
