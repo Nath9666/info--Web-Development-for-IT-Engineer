@@ -1,36 +1,40 @@
 <template>
   <div>
-    <asyncButton @click="signIn">
+    <h1>{{ user }}</h1>
+    <BaseButton @click="signIn">
       <slot></slot>
-    </asyncButton>
-
-    <div v-if="userData">
-      {{ userData }}
-    </div>
+    </BaseButton>
   </div>
 </template>
 
 <script>
-import asyncButton from "./asyncButton.vue";
+import BaseButton from "./baseButton.vue";
 import { signInAndGetUser } from "../lib/microsoftGraph.js";
 
 export default {
   name: "SigninButton",
-  props: {},
+  props: {
+    user: Object,
+  },
   components: {
-    asyncButton,
+    BaseButton,
   },
   data() {
     return {
       userData: null,
     };
   },
+  emits: ["userChanged", "submit"],
+  setup(props, ctx) {
+    ctx.emit("userChanged", props.user);
+  },
   methods: {
     async signIn() {
       try {
         const user = await signInAndGetUser();
         this.userData = user;
-        // Faites plus avec les données de l'utilisateur si nécessaire
+        console.log("Utilisateur connecté:", user);
+        this.$emit("userChanged", user);
         return user;
       } catch (error) {
         console.error("Erreur de connexion:", error);

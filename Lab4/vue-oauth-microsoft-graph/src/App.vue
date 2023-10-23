@@ -1,6 +1,6 @@
 <template>
   <base-content :user="user">
-    <HomePage />
+    <HomePage :user="user" />
   </base-content>
 </template>
 

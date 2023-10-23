@@ -16,8 +16,8 @@ msalInstance.initialize().then(() => {
 export async function signInAndGetUser() {
   try {
     const authResult = await msalInstance.loginPopup(requestedScopes);
+
     msalInstance.setActiveAccount(authResult.account);
-    console.log(authResult.account.username);
     return { account: authResult.account, ok: true };
   } catch (error) {
     console.error(error);

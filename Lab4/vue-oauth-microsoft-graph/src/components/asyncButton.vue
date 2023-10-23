@@ -1,9 +1,5 @@
 <template>
-  <base-button
-    :disabled="isPending"
-    :color="color"
-    @click.stop.prevent="handleClick"
-  >
+  <base-button :disabled="isPending" :color="color" @click="handleClick">
     <span v-if="isPending">Loading ...</span>
     <slot />
   </base-button>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <BaseHeader />
-    <slot :user="user"></slot>
+    <BaseHeader :user="user" />
+    <slot></slot>
     <BaseFooter />
   </div>
 </template>
