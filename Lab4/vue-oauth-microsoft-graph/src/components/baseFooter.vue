@@ -4,13 +4,25 @@
       This work is protected by international laws
       {{ new Date().getFullYear() }} | by Nathan
     </p>
+    <p>
+      {{ user }}
+    </p>
   </div>
 </template>
 
 <script>
+import { inject } from "vue";
+
 export default {
   name: "BaseHeader",
   props: {},
+  setup() {
+    const user = inject("user");
+
+    return {
+      user,
+    };
+  },
 };
 </script>
 

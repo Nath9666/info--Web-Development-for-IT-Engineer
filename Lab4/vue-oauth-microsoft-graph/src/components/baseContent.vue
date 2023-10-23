@@ -10,7 +10,7 @@
 <script>
 import BaseHeader from "./baseHeader.vue";
 import BaseFooter from "./baseFooter.vue";
-import { ref } from "vue";
+import { ref, provide } from "vue";
 
 export default {
   name: "BaseContent",
@@ -20,6 +20,8 @@ export default {
   },
   setup() {
     let user = ref(null);
+
+    provide("user", user);
 
     function setUser(e) {
       user.value = e;

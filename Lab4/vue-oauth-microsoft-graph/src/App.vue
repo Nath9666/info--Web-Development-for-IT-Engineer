@@ -7,6 +7,20 @@
 <script>
 import HomePage from "./pages/HomePage.vue";
 import BaseContent from "./components/baseContent.vue";
+import { createStore } from "vuex";
+
+const test = createStore({
+  state() {
+    return {
+      count: 0,
+    };
+  },
+  mutations: {
+    increment(state) {
+      state.count++;
+    },
+  },
+});
 
 export default {
   name: "App",
@@ -17,6 +31,7 @@ export default {
   data() {
     return {
       user: null,
+      test,
     };
   },
 };
