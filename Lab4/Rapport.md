@@ -58,9 +58,10 @@ The problem is that we have to pass the user in all the components. If we have a
 > Replace every needed user props by an inject and remove transitional props that are not useful anymore. For now, you can keep the userChanged event chain. Be sure to make your inject reactive.
 
 So we modify the page signinButton.vue to add the provide and the inject. We remove the props and the event.
-We use the provide to share the user with the other components inside just the basecontent so we passe the user in the footer to use it. 
+We use the provide to share the user with the other components inside just the basecontent so we passe the user in the footer to use it.
 
 #### Question 4
+
 > What is the bug if the inject is not reactive?
 
 If the inject is not reactive, the user will not be updated when we change it.
@@ -74,13 +75,14 @@ If the inject is not reactive, the user will not be updated when we change it.
 So we modify the page signinButton.vue to call a mutation in the store. We remove the provide and the inject. We remove the props and the event.
 
 #### Question 5
+
 > Build a comparison table between the various state management strategies available, especially about pro and cons. Optionally, feel free to explore other ways not covered in that tutorial.
 
-| Strategy | Pros | Cons |
-| --- | --- | --- |
-| Props and events | Easy to implement | If we have a lot of components, it can be a problem |
+| Strategy           | Pros              | Cons                                                |
+| ------------------ | ----------------- | --------------------------------------------------- |
+| Props and events   | Easy to implement | If we have a lot of components, it can be a problem |
 | Provide and inject | Easy to implement | If we have a lot of components, it can be a problem |
-| Vuex | Easy to implement | If we have a lot of components, it can be a problem |
+| Vuex               | Easy to implement | If we have a lot of components, it can be a problem |
 
 #### Question 6
 
@@ -90,4 +92,8 @@ I think it's a bad idea because it's not a good practice to use only one strateg
 
 ## Client-side routing
 
+### Exercice 5
 
+> Install vue-router v4+ according to official documentation. Make sure to pick the version compatible with Vue3, (also compatible with vue-router v4+)
+
+So we install vue-router with `npm install vue-router@4` so the file package.json is updated with the new dependency.
