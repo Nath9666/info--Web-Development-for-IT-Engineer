@@ -102,7 +102,7 @@ So we install vue-router with `npm install vue-router@4` so the file package.jso
 
 > Using the Getting Started guide, add / and /conversations routes. Define the router inside its own ES module (ex. src/router/index.js). For now, the ConversationsIndexPage should just contain a placeholder (a small message to visually see that the route works fine).
 
-Do to this we change the (main.js)[.\vue-oauth-microsoft-graph\src\main.js] file. We add the router view in the app.vue file. 
+Do to this we change the (main.js)[.\vue-oauth-microsoft-graph\src\main.js] file. We add the router view in the app.vue file.
 We deside to create a new page nammed About and we add the route the main.js file.
 
 ### Exercice 7
@@ -114,6 +114,7 @@ So we modify the baseHeader.vue file to add the link to the about page and the c
 ### Question 7
 
 > What is the performance difference between:
+
 - <a href="/conversations">Conversation</a>
 - <router-link to="/conversations">Conversations</router-link>
 
@@ -123,3 +124,10 @@ The difference is that the first one will reload the page and the second one wil
 
 > In the case the user tries to access /conversations without being logged-in, it should be redirected to the home page. Use a guard to implement this behaviour.
 
+So we modify the (index.js)[.\vue-oauth-microsoft-graph\src\router\index.js] file to add the guard with the beforeEnter just for the page conversation.
+
+### Exercice 9
+
+> Implement the /conversations/:id route. For now, the newly created ConversationShowPage component should access the id given in the URL and display it inside the template.
+
+So we create a new page [ConversationShowPage.vue](.\vue-oauth-microsoft-graph\src\components\ConversationShowPage.vue) and we add the route in the [index.js](.\vue-oauth-microsoft-graph\src\router\index.js) file. So when you click in the conversation section, you arrive in a new [route](http://localhost:8081/conversations/6) with the id of 6, (it is just a random number).
