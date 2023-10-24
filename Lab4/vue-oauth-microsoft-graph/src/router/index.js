@@ -15,7 +15,7 @@ const router = createRouter({
       component: () => import("@/pages/AboutPage.vue"),
     },
     {
-      path: "/Conversation",
+      path: "/conversations",
       name: "Conversation",
       beforeEnter: (to, from, next) => {
         const userIsLoggedIn = store.state.account !== null;
@@ -27,6 +27,11 @@ const router = createRouter({
         }
       },
       component: () => import("@/pages/ConversationsIndexPage.vue"),
+    },
+    {
+      path: "/conversations/:id",
+      component: () => import("@/components/ConversationShowPage.vue"),
+      props: true,
     },
   ],
 });

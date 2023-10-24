@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import BaseButton from "./baseButton.vue";
+import BaseButton from "./base/baseButton.vue";
 import { signInAndGetUser } from "../lib/microsoftGraph.js";
 import { ref } from "vue";
 

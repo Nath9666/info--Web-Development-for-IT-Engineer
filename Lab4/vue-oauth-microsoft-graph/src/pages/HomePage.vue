@@ -12,9 +12,8 @@
 </template>
 
 <script>
-import BaseButton from "../components/baseButton.vue";
+import BaseButton from "../components/base/baseButton.vue";
 import AsyncButton from "../components/asyncButton.vue";
-
 
 export default {
   name: "HomePage",

@@ -23,7 +23,7 @@
         <p>About</p>
       </BaseButton>
     </router-link>
-    <router-link to="/Conversation" v-if="this.$store.state.account">
+    <router-link to="/conversations" v-if="this.$store.state.account">
       <BaseButton>
         <p>Conversation</p>
       </BaseButton>
@@ -48,7 +48,7 @@
 
 <script>
 import BaseButton from "./baseButton.vue";
-import SigninButton from "./signinButton.vue";
+import SigninButton from "../signinButton.vue";
 import { ref } from "vue";
 
 export default {
