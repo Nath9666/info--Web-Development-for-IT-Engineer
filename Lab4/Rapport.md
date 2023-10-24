@@ -105,4 +105,8 @@ So we install vue-router with `npm install vue-router@4` so the file package.jso
 Do to this we change the (main.js)[.\vue-oauth-microsoft-graph\src\main.js] file. We add the router view in the app.vue file. 
 We deside to create a new page nammed About and we add the route the main.js file.
 
+### Exercice 7
 
+> You probably tested your routes by directly changing the URL. However, a normal user clicks on links and buttons. Help them by adding a link to the header that targets the /conversations routes. That link should only be visible for logged users. It must use the <router-link />.
+
+So we modify the baseHeader.vue file to add the link to the about page and the conversation page.
