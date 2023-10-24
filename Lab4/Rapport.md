@@ -114,9 +114,9 @@ So we modify the baseHeader.vue file to add the link to the about page and the c
 ### Question 7
 
 > What is the performance difference between:
-
-- <a href="/conversations">Conversation</a>
-- <router-link to="/conversations">Conversations</router-link>
+>
+> - `<a href="/conversations">Conversation</a>`
+> - `<router-link to="/conversations">Conversations</router-link>`
 
 The difference is that the first one will reload the page and the second one will not reload the page.
 
