@@ -1,15 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
+import store from "../main.js";
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
       path: "/",
-      name: "home",
-      component: () => import("@/pages/HomePage.vue"),
-    },
-    {
-      path: "/home",
       name: "home",
       component: () => import("@/pages/HomePage.vue"),
     },
@@ -22,11 +18,12 @@ const router = createRouter({
       path: "/Conversation",
       name: "Conversation",
       beforeEnter: (to, from, next) => {
-        const userIsLoggedIn = false;
+        const userIsLoggedIn = store.state.account !== null;
+        console.log("store", store);
         if (userIsLoggedIn) {
           next();
         } else {
-          next("/home");
+          next("./");
         }
       },
       component: () => import("@/pages/ConversationsIndexPage.vue"),

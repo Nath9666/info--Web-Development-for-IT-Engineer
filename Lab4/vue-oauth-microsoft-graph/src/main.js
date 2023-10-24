@@ -23,10 +23,12 @@ const store = createStore({
     };
   },
   mutations: {
-    login(state) {
+    async login(state) {
       state.account = signIn();
     },
   },
 });
+
+export default store;
 
 createApp(App).use(store).use(router).mount("#app");
