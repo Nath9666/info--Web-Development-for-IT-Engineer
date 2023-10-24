@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseButton @click="signIn">
+    <BaseButton>
       <slot></slot>
     </BaseButton>
   </div>

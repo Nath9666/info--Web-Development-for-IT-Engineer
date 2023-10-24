@@ -15,6 +15,7 @@
 import BaseButton from "../components/baseButton.vue";
 import AsyncButton from "../components/asyncButton.vue";
 
+
 export default {
   name: "HomePage",
   components: { BaseButton, AsyncButton },

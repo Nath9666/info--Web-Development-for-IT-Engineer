@@ -23,12 +23,12 @@
         <p>About</p>
       </BaseButton>
     </router-link>
-    <router-link to="/Conversation">
+    <router-link to="/Conversation" v-if="this.$store.state.account">
       <BaseButton>
         <p>Conversation</p>
       </BaseButton>
     </router-link>
-    <SigninButton :user="user" @userChanged="setUser($event)">
+    <SigninButton @click="increment">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -62,13 +62,19 @@ export default {
 
     function setUser(e) {
       user.value = e;
-      emit("userChanged", e); // Émettre l'événement userChanged
+      emit("userChanged", e);
     }
 
     return {
       user,
       setUser,
     };
+  },
+  methods: {
+    increment() {
+      this.$store.commit("login");
+      console.log(this.$store.state.account);
+    },
   },
 };
 </script>

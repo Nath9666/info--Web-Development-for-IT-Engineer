@@ -110,3 +110,16 @@ We deside to create a new page nammed About and we add the route the main.js fil
 > You probably tested your routes by directly changing the URL. However, a normal user clicks on links and buttons. Help them by adding a link to the header that targets the /conversations routes. That link should only be visible for logged users. It must use the <router-link />.
 
 So we modify the baseHeader.vue file to add the link to the about page and the conversation page.
+
+### Question 7
+
+> What is the performance difference between:
+- <a href="/conversations">Conversation</a>
+- <router-link to="/conversations">Conversations</router-link>
+
+The difference is that the first one will reload the page and the second one will not reload the page.
+
+### Exercice 8
+
+> In the case the user tries to access /conversations without being logged-in, it should be redirected to the home page. Use a guard to implement this behaviour.
+
