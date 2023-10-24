@@ -1,11 +1,10 @@
 <template>
   <base-content :user="user">
-    <HomePage :user="user" />
+    <router-view :user="user" />
   </base-content>
 </template>
 
 <script>
-import HomePage from "./pages/HomePage.vue";
 import BaseContent from "./components/baseContent.vue";
 import { createStore } from "vuex";
 
@@ -25,7 +24,6 @@ const test = createStore({
 export default {
   name: "App",
   components: {
-    HomePage,
     BaseContent,
   },
   data() {

@@ -97,3 +97,12 @@ I think it's a bad idea because it's not a good practice to use only one strateg
 > Install vue-router v4+ according to official documentation. Make sure to pick the version compatible with Vue3, (also compatible with vue-router v4+)
 
 So we install vue-router with `npm install vue-router@4` so the file package.json is updated with the new dependency.
+
+### Exercice 6
+
+> Using the Getting Started guide, add / and /conversations routes. Define the router inside its own ES module (ex. src/router/index.js). For now, the ConversationsIndexPage should just contain a placeholder (a small message to visually see that the route works fine).
+
+Do to this we change the (main.js)[.\vue-oauth-microsoft-graph\src\main.js] file. We add the router view in the app.vue file. 
+We deside to create a new page nammed About and we add the route the main.js file.
+
+

@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="home">
     <h1>Here comes the content of the HomePage</h1>
     <BaseButton>Click me</BaseButton>
     <BaseButton disabled="true">Disabled Button</BaseButton>
