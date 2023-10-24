@@ -1,6 +1,6 @@
 <template>
-  <base-content :user="user">
-    <router-view :user="user" />
+  <base-content>
+    <router-view />
   </base-content>
 </template>
 
